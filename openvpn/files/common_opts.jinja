@@ -159,6 +159,14 @@ tls-crypt {{ config.tls_crypt }}
 tls-auth {{ multipart_param(config.tls_auth) }}
 {%- endif %}
 
+{%- if config.tls_verify is defined %}
+tls-verify {{ config.tls_verify }}
+{%- endif %}
+
+{%- if config.tls_export_cert is defined %}
+tls-export-cert {{ config.tls_export_cert }}
+{%- endif %}
+
 {%- if config.reneg_sec is defined %}
 reneg-sec {{ config.reneg_sec }}
 {%- endif %}
